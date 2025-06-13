@@ -38,10 +38,16 @@ const Button: FC<ButtonProps> = ({
   size,
   ...props
 }) => {
-  return <button className={cn(buttonVariants({variant, size, className}))} disabled={isloading} {...props}>
-    {isloading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-    {children}
-  </button>;
+  return (
+    <button
+      className={cn(buttonVariants({ variant, size, className }))}
+      disabled={isloading}
+      {...props}
+    >
+      {isloading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+      {children}
+    </button>
+  );
 };
 
 export default Button;
