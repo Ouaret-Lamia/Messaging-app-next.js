@@ -5,16 +5,14 @@ import { FC, useState } from "react";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 
-interface PageProps {}
-
-const page: FC<PageProps> = ({}) => {
+const Page: FC = ({}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function loginWithGoogle() {
     setIsLoading(true);
     try {
         await signIn ("google")
-    } catch (error) {
+    } catch {
         toast.error("Something went wrong with your login")
     }finally {
         setIsLoading(false);
@@ -78,4 +76,4 @@ const page: FC<PageProps> = ({}) => {
   );
 };
 
-export default page;
+export default Page;

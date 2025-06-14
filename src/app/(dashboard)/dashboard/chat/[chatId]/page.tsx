@@ -7,7 +7,6 @@ import { messageArrayValidator } from "@/lib/validations/message";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { FC } from "react";
 
 interface pageProps {
   params: {
@@ -31,13 +30,13 @@ async function getChatMessages(chatId: string) {
     const messages = messageArrayValidator.parse(reversedDbMessages);
 
     return messages;
-  } catch (error) {
+  } catch {
     notFound();
   }
 }
 
-const page = async ({ params }: pageProps) => {
-  const { chatId } = params;
+const Page = async ({ params }: pageProps) => {
+  const { chatId } = await params;
   const session = await getServerSession(authOptions);
   if (!session) notFound();
 
@@ -93,4 +92,4 @@ const page = async ({ params }: pageProps) => {
   );
 };
 
-export default page;
+export default Page;

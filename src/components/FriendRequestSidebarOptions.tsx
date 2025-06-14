@@ -36,7 +36,7 @@ const FriendRequestSidebarOptions: FC<FriendRequestSidebarOptionsProps> = ({
         );
         pusherClient.unbind("incoming_friend_requests", friendRequestHandler);
       };
-    }, [])
+    }, [sessionId])
 
   return (
     <Link

@@ -6,9 +6,8 @@ import { signOut } from "next-auth/react";
 import toast from "react-hot-toast";
 import { Loader2, LogOut } from "lucide-react";
 
-interface SignOutButtonProps extends ButtonHTMLAttributes<HTMLElement> {}
 
-const SignOutButton: FC<SignOutButtonProps> = ({ ...props }) => {
+const SignOutButton: FC<ButtonHTMLAttributes<HTMLElement>> = ({ ...props }) => {
   const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
   return (
     <Button
@@ -18,7 +17,7 @@ const SignOutButton: FC<SignOutButtonProps> = ({ ...props }) => {
         setIsSigningOut(true);
         try {
           await signOut();
-        } catch (error) {
+        } catch {
           toast.error("There was a problem signing out");
         } finally {
           setIsSigningOut(false);
