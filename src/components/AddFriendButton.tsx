@@ -46,12 +46,12 @@ const AddFriendButton: FC = ({}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-[30vw]">
       <label
         htmlFor="email"
         className="block text-sm font-medium leading-6 text-gray-900"
       >
-        Add friend by E-mail
+        Add a friend by E-mail
       </label>
 
       <div className="mt-2 flex gap-4">
