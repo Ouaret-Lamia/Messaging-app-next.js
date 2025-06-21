@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import { FC, useState } from "react";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
+import { Icons } from "@/components/icons";
 
 const Page: FC = ({}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -11,41 +12,37 @@ const Page: FC = ({}) => {
   async function loginWithGoogle() {
     setIsLoading(true);
     try {
-        await signIn ("google")
+      await signIn("google");
     } catch {
-        toast.error("Something went wrong with your login")
-    }finally {
-        setIsLoading(false);
+      toast.error("Something went wrong with your login");
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <>
-      <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full flex flex-col items-center max-w-md space-y-8">
-          <div className="flex flex-col items-center gap-8">
-            logo
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Sign in to your account
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-rose-300 via-white to-rose-300 px-4">
+        <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 sm:p-10 space-y-8">
+          <div className="flex flex-col items-center">
+            <Icons.Logo className="h-26 text-rose-700" />
+            <h2 className="mt-4 text-center text-2xl font-extrabold text-gray-900">
+              Welcome back 👋
             </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Sign in to connect with your friends
+            </p>
           </div>
 
           <Button
             isloading={isLoading}
             type="button"
-            className="max-w-sm mx-auto w-full flex justify-center"
+            className="w-full flex items-center justify-center gap-3 rounded-xl bg-rose-400 text-white font-medium py-3 hover:bg-rose-500 transition"
             onClick={loginWithGoogle}
           >
-            {isLoading ? 
-              null
-            : 
+            {!isLoading && (
               <svg
-                className="mr-2 h-4 w-4"
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fab"
-                data-icon="github"
-                role="img"
+                className="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -65,10 +62,9 @@ const Page: FC = ({}) => {
                   d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                   fill="#EA4335"
                 />
-                <path d="M1 1h22v22H1z" fill="none" />
               </svg>
-            }
-            Google
+            )}
+            Continue with Google
           </Button>
         </div>
       </div>
