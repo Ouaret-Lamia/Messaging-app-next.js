@@ -48,7 +48,7 @@ const Layout = async ({ children }: LayoutProps) => {
     <div className="w-full flex h-screen">
       <div className="bg-rose-50 flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 px-6">
         <Link href="/dashboard" className="flex h-16 shrink-0 items-center">
-          <Icons.Logo className="mt-9 h-30 w-auto" />
+          <Icons.Logo className="mt-9" width={150} height={150} />
         </Link>
 
         {friends.length > 0 ? (

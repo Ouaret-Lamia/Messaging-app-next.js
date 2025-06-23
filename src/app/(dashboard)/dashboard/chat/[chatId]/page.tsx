@@ -36,7 +36,7 @@ async function getChatMessages(chatId: string) {
 }
 
 const Page = async ({ params }: pageProps) => {
-  const { chatId } = await params;
+  const { chatId } = params;
   const session = await getServerSession(authOptions);
   if (!session) notFound();
 

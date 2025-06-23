@@ -22,10 +22,10 @@ const Page: FC = ({}) => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-rose-300 via-white to-rose-300 px-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-rose-200 via-white to-rose-200 px-4">
         <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 sm:p-10 space-y-8">
           <div className="flex flex-col items-center">
-            <Icons.Logo className="h-26 text-rose-700" />
+            <Icons.Logo width={150} height={150} />
             <h2 className="mt-4 text-center text-2xl font-extrabold text-gray-900">
               Welcome back 👋
             </h2>

@@ -86,7 +86,7 @@ const page = async ({}) => {
 
         <div className="rounded-lg shadow-sm p-4 flex flex-col justify-center items-center bg-white hover:shadow-lg">
           <span className="text-3xl font-semibold">{messagesCount}</span>
-          <span className="text-lg text-zinc-700 font-semibold">Total Messages</span>
+          <span className="text-lg text-center text-zinc-700 font-semibold">Total Messages</span>
         </div>
       </div>
 

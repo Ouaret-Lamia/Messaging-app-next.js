@@ -1,13 +1,11 @@
 import AddFriendButton from "@/components/AddFriendButton";
 import { getFriendsByUserId } from "@/helpers/get-friends-by-user-id";
-import { fetchRedis } from "@/helpers/redis";
 import { authOptions } from "@/lib/auth";
 import { chatHrefConstructor } from "@/lib/utils";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FC } from "react";
 
 const page = async () => {
   const session = await getServerSession(authOptions);
@@ -32,6 +30,7 @@ const page = async () => {
           <div className="grid grid-cols-1 gap-4 md-grid-cols-2 lg:grid-cols-3">
             {friends.map((friend) => (
               <Link
+                key={friend.id}
                 href={`/dashboard/chat/${chatHrefConstructor(
                   session.user.id,
                   friend.id

@@ -1,8 +1,8 @@
 import { UserPlus } from "lucide-react";
-import { ImgHTMLAttributes } from "react";
+import Image, { ImageProps } from "next/image";
 
 export const Icons = {
-  Logo: (props: ImgHTMLAttributes<HTMLImageElement>) => (<img src="/logo.png" alt="logo" {...props} />),
+  Logo: (props: Omit<ImageProps, 'src' | 'alt'>) => (<Image src="/logo.png" alt="logo" {...props} />),
   UserPlus
 }
 
