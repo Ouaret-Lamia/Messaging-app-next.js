@@ -8,12 +8,6 @@ import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-interface pageProps {
-  params: {
-    chatId: string;
-  };
-}
-
 async function getChatMessages(chatId: string) {
   try {
     const results: string[] = await fetchRedis(
@@ -24,9 +18,7 @@ async function getChatMessages(chatId: string) {
     );
 
     const dbMessages = results.map((message) => JSON.parse(message) as Message);
-
     const reversedDbMessages = dbMessages.reverse();
-
     const messages = messageArrayValidator.parse(reversedDbMessages);
 
     return messages;
@@ -35,13 +27,13 @@ async function getChatMessages(chatId: string) {
   }
 }
 
-const Page = async ({ params }: pageProps) => {
-  const { chatId } = params;
+const Page = async ({ params }: { params: Promise<{ chatId: string }> }) => {
+  const { chatId } = await params;
+  
   const session = await getServerSession(authOptions);
   if (!session) notFound();
 
   const { user } = session;
-
   const [userId1, userId2] = chatId.split("--");
 
   if (user.id !== userId1 && user.id !== userId2) {
@@ -67,14 +59,12 @@ const Page = async ({ params }: pageProps) => {
               />
             </div>
           </div>
-
           <div className="flex flex-col leading-tight">
             <div className="text-xl flex items-center">
-              <span className="text-gra--700 mr-3 font-semibold">
+              <span className="text-gray-700 mr-3 font-semibold">
                 {chatPartner.name}
               </span>
             </div>
-
             <span className="text-sm text-gray-600">{chatPartner.email}</span>
           </div>
         </div>
