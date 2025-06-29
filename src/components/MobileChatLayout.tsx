@@ -39,15 +39,15 @@ const MobileChatLayout: FC<MobileChatLayoutProps> = ({
   } ,[pathname])
 
   return (
-    <div className="fixed bg-rose-50 border-b border-zinc-200 top-0 inset-x-0 py-2 px-4">
+    <div className="fixed bg-indigo-50 border-b border-zinc-200 top-0 inset-x-0 py-2 px-4">
       <div className="w-full flex justify-between items-center">
         <Link
           href="/dashboard"
           className={buttonVariants({ variant: "ghost" , className: "flex items-center"})}
         >
-          <Icons.Logo className="h-20 w-auto text-rose-600" width={100} height={100} />
+          <Icons.Logo className="h-20 w-auto text-indigo-600" width={100} height={100} />
         </Link>
-        <Button onClick={() => setOpen(true)} variant={"ghost"} className="text-rose-900 gap-4">
+        <Button onClick={() => setOpen(true)} variant={"ghost"} className="text-indigo-900 gap-4">
           <Menu className="h-6 w-6" />
         </Button>
       </div>
@@ -71,13 +71,13 @@ const MobileChatLayout: FC<MobileChatLayoutProps> = ({
                     <div className="flex h-full flex-col overflow-hidden bg-white py-6 shadow-xl">
                       <div className="px-4 sm:px-6">
                         <div className="flex items-start justify-between">
-                          <Dialog.Title className="text-xl text-rose-900 font-semibold leading-6 text-gray-900">
+                          <Dialog.Title className="text-xl text-indigo-900 font-semibold leading-6 text-gray-900">
                             Dashboard
                           </Dialog.Title>
                           <div className="ml-3 flex h-7 items-center">
                             <button
                               type="button"
-                              className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
+                              className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                               onClick={() => setOpen(false)}
                             >
                               <span className="sr-only">Close panel</span>
@@ -118,9 +118,9 @@ const MobileChatLayout: FC<MobileChatLayoutProps> = ({
                                     <li key={option.name}>
                                       <Link
                                         href={option.href}
-                                        className="text-gray-700 hover:text-rose-600 hover:bg-rose-100 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                        className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-100 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                       >
-                                        <span className="text-rose-400 border-rose-200 group-hover:border-rose-600 group-hover:text-rose-600 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium">
+                                        <span className="text-indigo-400 border-indigo-200 group-hover:border-indigo-600 group-hover:text-indigo-600 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium">
                                           <Icon className="h-4 w-4" />
                                         </span>
                                         <span className="truncate">

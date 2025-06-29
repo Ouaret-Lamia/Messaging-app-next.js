@@ -71,7 +71,7 @@ const FriendRequests: FC<FriendRequestsProps> = ({
         friendRequests.map((request) => (
           <div key={request.senderId} className="flex gap-4 items-center justify-between bg-zinc-50 py-5 px-8 rounded-lg ring-1 ring-inset ring-gray-200">
             <div className="flex items-center gap-4">
-              <UserPlus className="text-rose-900" />
+              <UserPlus className="text-indigo-900" />
               <p className="font-medium text-lg">{request.senderEmail}</p>
             </div>
             

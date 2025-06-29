@@ -16,7 +16,7 @@ const page = async () => {
   return (
     <main className="w-full">
       <div className="flex flex-col items-center justify-center w-full py-15 rounded-lg shadow-md">
-        <h1 className="font-bold text-4xl mb-8 text-rose-900">Add a friend</h1>
+        <h1 className="font-bold text-4xl mb-8 text-indigo-900">Add a friend</h1>
         <AddFriendButton />
       </div>
 

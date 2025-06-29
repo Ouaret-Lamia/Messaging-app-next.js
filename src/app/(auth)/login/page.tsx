@@ -22,7 +22,7 @@ const Page: FC = ({}) => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-rose-200 via-white to-rose-200 px-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-indigo-200 via-white to-indigo-200 px-4">
         <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 sm:p-10 space-y-8">
           <div className="flex flex-col items-center">
             <Icons.Logo width={150} height={150} />
@@ -37,7 +37,7 @@ const Page: FC = ({}) => {
           <Button
             isloading={isLoading}
             type="button"
-            className="w-full flex items-center justify-center gap-3 rounded-xl bg-rose-400 text-white font-medium py-3 hover:bg-rose-500 transition"
+            className="w-full flex items-center justify-center gap-3 rounded-xl bg-indigo-600 text-white font-medium py-3 hover:bg-indigo-700 transition"
             onClick={loginWithGoogle}
           >
             {!isLoading && (

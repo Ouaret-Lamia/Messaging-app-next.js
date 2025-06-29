@@ -8,8 +8,8 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-rose-800 text-white hover:bg-rose-700 hover:cursor-pointer",
-        ghost: "bg-transparent hover:text-rose-800 hover:bg-rose-200 hover:cursor-pointer",
+        default: "bg-indigo-800 text-white hover:bg-indigo-700 hover:cursor-pointer",
+        ghost: "bg-transparent hover:text-indigo-800 hover:bg-indigo-200 hover:cursor-pointer",
       },
       size: {
         default: "h-10 px-4 py-2",
